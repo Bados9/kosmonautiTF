@@ -6,7 +6,7 @@
  </head>
  <body>
     <h1>Evidence kosmonautů</h1>
-    <table>
+    <table class='table table-bordered'>
         <tr>
             <th>Jméno</th>
             <th>Příjmení</th>
