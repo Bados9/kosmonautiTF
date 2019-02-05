@@ -12,6 +12,11 @@
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
+    function deleteAstronaut($astroID){
+        $query = "DELETE FROM astronauts WHERE astroID = '{$astroID}';"
+        $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+    }
+
     /*$query = 'DROP TABLE astronauts;';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     $query = 'CREATE TABLE astronauts (astroID SERIAL NOT NULL,

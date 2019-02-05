@@ -25,11 +25,32 @@
             <td> <?= $row[2]; ?></td>
             <td> <?= $row[3]; ?></td>
             <td> <?= $row[4]; ?></td>
-            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-pencil text-warning"></span>Upravit</button> </td>
-            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-remove text-danger"></span>Odstranit</button> </td>
+            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
+            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
         <?}?>
     </table>
- 
+
+    <button class='btn btn-default' data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
