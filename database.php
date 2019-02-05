@@ -2,7 +2,7 @@
     $conn = pg_connect(getenv("DATABASE_URL")) or die('Could not connect: ' . pg_last_error());
 
     function newAstronaut($fname, $sname, $bdate, $superpwr){
-        $query = "INSERT INTO astronauts VALUES(DEFAULT, '{$test}', '{$sname}', '{$bdate}', '{$superpwr}');";
+        $query = "INSERT INTO astronauts VALUES(DEFAULT, '{$fname}', '{$sname}', '{$bdate}', '{$superpwr}');";
         echo $query;
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
