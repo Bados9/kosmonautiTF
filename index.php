@@ -2,6 +2,8 @@
  <head>
     <title>Kosmonauti</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
  </head>
  <body>
@@ -31,7 +33,7 @@
         <?}?>
     </table>
 
-    <button class="btn btn-default" data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
 
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
