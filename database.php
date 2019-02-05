@@ -11,7 +11,7 @@
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
-    $query = 'DROP TABLE astronauts;';
+    /*$query = 'DROP TABLE astronauts;';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     $query = 'CREATE TABLE astronauts (astroID SERIAL NOT NULL,
                                        firstname VARCHAR(20) NOT NULL,
