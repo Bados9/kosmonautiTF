@@ -23,8 +23,8 @@
     
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-    newAstronaut("David", "Janeček", 2001-05-05, "nic");
-    newAstronaut("Adam", "Jiruška", 1999-01-02, "nemá");
+    newAstronaut("David", "Janeček", '2001-05-05', "nic");
+    newAstronaut("Adam", "Jiruška", '1999-01-02', "nemá");
 
     $result = pg_query("SELECT * FROM astronauts");
     if (!$result) {
