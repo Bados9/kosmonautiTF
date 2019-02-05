@@ -7,6 +7,7 @@
  <body>
     <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
+    
     <table class='table table-bordered'>
         <tr>
             <th>Jméno</th>
@@ -14,13 +15,17 @@
             <th>Datum narození</th>
             <th>Superschopnost</th>
         </tr>
+        <?
+        $result = getAllAstronauts();
+        while ($row = pg_fetch_row($result)){ ?>
         <tr>
-            <td>Adam</td>
-            <td>Jiruška</td>
-            <td>4.4.4444</td>
-            <td>nemá</td>
+            <td> <?= $row[1]; ?></td>
+            <td> <?= $row[2]; ?></td>
+            <td> <?= $row[3]; ?></td>
+            <td> <?= $row[4]; ?></td>
         </tr>
+        <?}?>
     </table>
-    <?php echo '<p>Hello World</p>'; ?> 
- </body>
+ 
+</body>
 </html>

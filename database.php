@@ -25,16 +25,13 @@
 
     //newAstronaut("David", "Janeček", '2001-05-05', "nic");
     //newAstronaut("Adam", "Jiruška", '1999-01-02', "nemá");
-
-    $result = pg_query("SELECT * FROM astronauts");
-    if (!$result) {
-    echo "An error occurred.\n";
-    exit;
-    }
-
-    while ($row = pg_fetch_row($result)) {
-    echo "jméno: $row[1]  příjmení: $row[2] datum: $row[3] superschopnost: $row[4]";
-    echo "<br />\n";
+    function getAllAstronauts(){
+        $result = pg_query("SELECT * FROM astronauts");
+        if (!$result) {
+        echo "An error occurred.\n";
+        exit;
+        }
+        return $result;
     }
 
     pg_close($dbconn);
