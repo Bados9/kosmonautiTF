@@ -3,7 +3,7 @@
     echo "ahooj";
     $query = 'CREATE TABLE astronauts (firstname VARCHAR(20),
                                        surname VARCHAR(20), 
-                                       bdate DATETIME,
+                                       bdate TIMESTAMP,
                                        superpower VARCHAR(50));';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
