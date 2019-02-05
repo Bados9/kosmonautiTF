@@ -2,7 +2,7 @@
     $conn = pg_connect(getenv("DATABASE_URL")) or die('Could not connect: ' . pg_last_error());
 
     $query = 'DROP TABLE astronauts;';
-    $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+    //$result = pg_query($query) or die('Query failed: ' . pg_last_error());
     echo "dropnuto";
     $query = 'CREATE TABLE astronauts (firstname VARCHAR(20) NOT NULL,
                                        surname VARCHAR(20) NOT NULL, 
