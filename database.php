@@ -11,7 +11,7 @@
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
-    /*$query = 'DROP TABLE astronauts;';
+    $query = 'DROP TABLE astronauts;';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     $query = 'CREATE TABLE astronauts (astroID SERIAL NOT NULL,
                                        firstname VARCHAR(20) NOT NULL,
@@ -20,7 +20,7 @@
                                        superpower VARCHAR(50),
                                        PRIMARY KEY(astroID, firstname, surname));';
     
-    $result = pg_query($query) or die('Query failed: ' . pg_last_error());*/
+    $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
     newAstronaut("David", "Janeček", 2001-05-05, "nic");
     newAstronaut("Adam", "Jiruška", 1999-01-02, "nemá");
