@@ -13,7 +13,7 @@
     }
 
     function deleteAstronaut($astroID){
-        $query = "DELETE FROM astronauts WHERE astroID = '{$astroID}';"
+        $query = "DELETE FROM astronauts WHERE astroID = '{$astroID}';";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 

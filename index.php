@@ -25,13 +25,13 @@
             <td> <?= $row[2]; ?></td>
             <td> <?= $row[3]; ?></td>
             <td> <?= $row[4]; ?></td>
-            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
-            <td> <button type="button" class='btn btn-default'><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
+            <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
+            <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
         <?}?>
     </table>
 
-    <button class='btn btn-default' data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
 
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
