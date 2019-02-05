@@ -5,6 +5,7 @@
     <meta charset="utf-8">
  </head>
  <body>
+    <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
     <table class='table table-bordered'>
         <tr>
