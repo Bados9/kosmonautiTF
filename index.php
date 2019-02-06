@@ -18,7 +18,14 @@
                                     superpwr:  $('#superpwr').val()},
                             type: "POST",
                             success: function(){
-                                var markup = "<tr><td>a</td><td>b</td><td>c</td><td>d</td></tr>";
+                                var markup = "<tr> \
+                                                <td>" + $('#fname').val() + "</td> \
+                                                <td>" + $('#sname').val() + "</td> \
+                                                <td>" + $('#bdate').val() + "</td> \
+                                                <td>" + $('#superpwr').val() + "</td> \
+                                                <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td> \
+                                                <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td> \
+                                              </tr>";
                                 $("table tbody").append(markup);
 
                                 console.log("astronaut added");
