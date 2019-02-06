@@ -10,13 +10,9 @@
     <script>
         $(document).ready(function(){
             $('#newAstronaut').click(function() {    
-                console.log("jsem tu");
-                $.ajax({ url: 'database.php',
-                data: {func: 'newAstronaut'},
-                type: 'post',
-                success: function(output) {
-                        alert(output);
-                    }
+                $.ajax({    url: 'index.php',
+                            data: {func: 'newAstronaut'},
+                            type: 'post'
                 });
             });
         });
