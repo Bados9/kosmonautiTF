@@ -3,7 +3,6 @@
 
     function newAstronaut($fname, $sname, $bdate, $superpwr){
         $query = "INSERT INTO astronauts VALUES(DEFAULT, '{$fname}', '{$sname}', '{$bdate}', '{$superpwr}');";
-        echo $query;
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
@@ -39,12 +38,10 @@
         return $result;
     }
 
-    echo "cuuuus";
     if(isset($_POST['action']) && !empty($_POST['action'])) {
         $function = $_POST['action'];
-        echo "ahoooooj";
         switch($function) {
-            case 'newAstronaut' : newAstronaut("john", "vomacka", '2001-05-04', "má");;break;
+            case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
         }
     }
 

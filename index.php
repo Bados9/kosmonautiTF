@@ -10,17 +10,19 @@
     <script>
         $(document).ready(function(){
             $('#newAstronaut').click(function() {    
-                console.log("click");
                 $.ajax({    url: "database.php",
-                            data: {action: "newAstronaut"},
+                            data: { action: "newAstronaut",
+                                    fname: $('#name').val(),
+                                    sname: $('#sname').val(),
+                                    bdate:  $('#bdate').val(),
+                                    superpwr:  $('#superpwr').val()},
                             type: "POST",
                             success: function(){
-                                console.log("jooooo");
+                                console.log("astronaut added");
                             }
                 });
             });
         });
-
    </script>
     <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
