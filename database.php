@@ -38,13 +38,13 @@
         }
         return $result;
     }
+
     echo "cuuuus";
     if(isset($_POST['action']) && !empty($_POST['action'])) {
         $function = $_POST['action'];
         echo "ahoooooj";
         switch($function) {
-            case 'newAstronaut' : newAstronaut();break;
-            case 'blah' : blah();break;
+            case 'newAstronaut' : newAstronaut("john", "vomacka", '2001-05-04', "má");;break;
         }
     }
 
