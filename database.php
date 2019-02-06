@@ -38,9 +38,9 @@
         }
         return $result;
     }
-
-    if(isset($_POST['func']) && !empty($_POST['func'])) {
-        $function = $_POST['func'];
+    echo "cuuuus";
+    if(isset($_POST['action']) && !empty($_POST['action'])) {
+        $function = $_POST['action'];
         echo "ahoooooj";
         switch($function) {
             case 'newAstronaut' : newAstronaut();break;
