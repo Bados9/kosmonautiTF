@@ -15,7 +15,9 @@
             success: function(output) {
                       alert(output);
                   }
+            });
         });
+
    </script>
     <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
@@ -75,11 +77,10 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id = "newAstronaut" class="btn btn-default" data-dismiss="modal">Add</button>
+                <button type="button" id ="newAstronaut" class="btn btn-default" data-dismiss="modal">Add</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
             </div>
-
         </div>
     </div>
 
