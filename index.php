@@ -9,6 +9,8 @@
  <body>
     <script>
         $(document).ready(function(){
+            $('#astroTable').DataTable();
+            $('.dataTables_length').addClass('bs-select');
             $('#newAstronaut').click(function() {    
                 $.ajax({    url: "database.php",
                             data: { action: "newAstronaut",
@@ -37,7 +39,7 @@
     <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
     
-    <table class='table table-bordered'>
+    <table id='astroTable' class='table table-bordered'>
         <thead>
             <tr>
                 <th>Jméno</th>
