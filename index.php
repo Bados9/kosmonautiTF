@@ -9,6 +9,7 @@
  <body>
     <script>
         $('#newAstronaut').click(function() {    
+            console.log("jsem tu");
             $.ajax({ url: 'database.php',
             data: {func: 'newAstronaut'},
             type: 'post',
