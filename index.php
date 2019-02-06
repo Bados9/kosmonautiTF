@@ -23,8 +23,8 @@
                                                 <td>" + $('#sname').val() + "</td> \
                                                 <td>" + $('#bdate').val() + "</td> \
                                                 <td>" + $('#superpwr').val() + "</td> \
-                                                <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td> \
-                                                <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td> \
+                                                <td> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-pencil text-warning'></span> Upravit</button> </td> \
+                                                <td> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-remove text-danger'></span> Odstranit</button> </td> \
                                               </tr>";
                                 $("table tbody").append(markup);
 
