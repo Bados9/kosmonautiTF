@@ -33,26 +33,46 @@
         <?}?>
     </table>
 
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> Přidat astronauta </button>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
 
-    <div id="myModal" class="modal fade" role="dialog">
+    <div id="addAstronaut" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Nový kosmonaut</h4>
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Jméno:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Příjmení:</label>
+                        <input type="text" class="form-control" id="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="bdate">Datum narození:</label>
+                        <input type="date" class="form-control" id="bdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="superpwr">Superschopnost:</label>
+                        <input type="text" class="form-control" id="superpwr">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
             </div>
 
         </div>
     </div>
+
+
 </body>
 </html>
