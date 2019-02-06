@@ -18,6 +18,9 @@
                                     superpwr:  $('#superpwr').val()},
                             type: "POST",
                             success: function(){
+                                var markup = <tr><td>a</td><td>b</td><td>c</td><td>d</td></tr>
+                                $("table tbody").append(markup);
+
                                 console.log("astronaut added");
                             }
                 });
@@ -28,14 +31,17 @@
     <h1>Evidence kosmonautů</h1>
     
     <table class='table table-bordered'>
-        <tr>
-            <th>Jméno</th>
-            <th>Příjmení</th>
-            <th>Datum narození</th>
-            <th>Superschopnost</th>
-            <th></th>
-            <th></th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+                <th>Datum narození</th>
+                <th>Superschopnost</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
         <?
         $result = getAllAstronauts();
         while ($row = pg_fetch_row($result)){ ?>
@@ -48,6 +54,7 @@
             <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
         <?}?>
+        </tbody>
     </table>
 
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
