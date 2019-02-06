@@ -39,5 +39,13 @@
         return $result;
     }
 
+    if(isset($_POST['func']) && !empty($_POST['func'])) {
+        $function = $_POST['func'];
+        switch($function) {
+            case 'newAstronaut' : newAstronaut();break;
+            case 'blah' : blah();break;
+        }
+    }
+
     pg_close($dbconn);
 ?>
