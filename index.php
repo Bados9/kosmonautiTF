@@ -8,14 +8,16 @@
  </head>
  <body>
     <script>
-        $('#newAstronaut').click(function() {    
-            console.log("jsem tu");
-            $.ajax({ url: 'database.php',
-            data: {func: 'newAstronaut'},
-            type: 'post',
-            success: function(output) {
-                      alert(output);
-                  }
+        $(document).ready(function(){
+            $('#newAstronaut').click(function() {    
+                console.log("jsem tu");
+                $.ajax({ url: 'database.php',
+                data: {func: 'newAstronaut'},
+                type: 'post',
+                success: function(output) {
+                        alert(output);
+                    }
+                });
             });
         });
 
