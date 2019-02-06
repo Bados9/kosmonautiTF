@@ -41,7 +41,7 @@
 
     if(isset($_POST['func']) && !empty($_POST['func'])) {
         $function = $_POST['func'];
-        echo $function;
+        echo "ahoooooj";
         switch($function) {
             case 'newAstronaut' : newAstronaut();break;
             case 'blah' : blah();break;

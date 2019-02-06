@@ -10,7 +10,7 @@
     <script>
         $(document).ready(function(){
             $('#newAstronaut').click(function() {    
-                $.ajax({    url: 'index.php',
+                $.ajax({    url: 'database.php',
                             data: {func: 'newAstronaut'},
                             type: 'post'
                 });
