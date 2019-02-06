@@ -12,7 +12,7 @@
             $('#newAstronaut').click(function() {    
                 $.ajax({    url: "database.php",
                             data: { action: "newAstronaut",
-                                    fname: $('#name').val(),
+                                    fname: $('#fname').val(),
                                     sname: $('#sname').val(),
                                     bdate:  $('#bdate').val(),
                                     superpwr:  $('#superpwr').val()},
@@ -64,12 +64,12 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="name">Jméno:</label>
-                        <input type="text" class="form-control" id="name">
+                        <label for="fname">Jméno:</label>
+                        <input type="text" class="form-control" id="fname">
                     </div>
                     <div class="form-group">
-                        <label for="surname">Příjmení:</label>
-                        <input type="text" class="form-control" id="surname">
+                        <label for="sname">Příjmení:</label>
+                        <input type="text" class="form-control" id="sname">
                     </div>
                     <div class="form-group">
                         <label for="bdate">Datum narození:</label>
