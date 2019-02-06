@@ -10,9 +10,12 @@
     <script>
         $(document).ready(function(){
             $('#newAstronaut').click(function() {    
-                $.ajax({    url: 'database.php',
-                            data: {func: 'newAstronaut'},
-                            type: 'post'
+                $.ajax({    url: "database.php",
+                            data: {func: "newAstronaut"},
+                            type: "POST",
+                            success: function(){
+                                console.log("jooooo");
+                            }
                 });
             });
         });
