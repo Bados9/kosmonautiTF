@@ -31,10 +31,10 @@
                                 console.log("uspech nebo ne");
                                 var response = JSON.parse(data);
                                 console.log(response[1]);
-                                $("#fname").val("a takhle");
-                                $("#sname").val(response[2]);
-                                $("#bdate").val(response[3]);
-                                $("#superpwr").val(response[4]);
+                                $("#fname1").val("a takhle");
+                                $("#sname1").val(response[2]);
+                                $("#bdate1").val(response[3]);
+                                $("#superpwr1").val(response[4]);
                             }
 
                 });
@@ -191,25 +191,25 @@
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Potvrzení</h4>
+                <h4 class="modal-title">Editace kosmonauta</h4>
             </div>
             <div class="modal-body">
             <form>
                     <div class="form-group">
                         <label for="fname">Jméno:</label>
-                        <input type="text" class="form-control" id="fname" value="">
+                        <input type="text" class="form-control" id="fname1" value="">
                     </div>
                     <div class="form-group">
                         <label for="sname">Příjmení:</label>
-                        <input type="text" class="form-control" id="sname">
+                        <input type="text" class="form-control" id="sname1">
                     </div>
                     <div class="form-group">
                         <label for="bdate">Datum narození:</label>
-                        <input type="date" class="form-control" id="bdate">
+                        <input type="date" class="form-control" id="bdate1">
                     </div>
                     <div class="form-group">
                         <label for="superpwr">Superschopnost:</label>
-                        <input type="text" class="form-control" id="superpwr">
+                        <input type="text" class="form-control" id="superpwr1">
                     </div>
                 </form>
             </div>
