@@ -10,6 +10,7 @@
  <body>
     <script>
         var removeID;
+        var editID;
         $(document).ready(function(){
             //$('#astroTable').DataTable();
             //$('.dataTables_length').addClass('bs-select');
@@ -58,6 +59,7 @@
 
             $('#edit').click(function() {
                 console.log("click na edit");
+                editID = $('#edit').data('id');
                 $.ajax({    url: "database.php",
                             data: { action: "getAstronaut",
                                     id: editID },
