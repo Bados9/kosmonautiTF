@@ -101,8 +101,8 @@
         });
    </script>
     <?php include 'database.php'; ?>
-    <div class="border border-black">
-        <p style="font-size:160%;" class="col-sm-8">This is a paragraph.</p>
+    <div style="padding-top:50px;" class="border border-black">
+        <p style="font-size:360%;" class="col-sm-8">Evidence kosmonautů</p>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
     </div>
 
