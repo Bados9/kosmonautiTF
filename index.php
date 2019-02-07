@@ -29,8 +29,9 @@
                             type: "POST",
                             success: function(data){
                                 console.log("uspech nebo ne");
-                                console.log(data[2]);
-                                $("#fname").value = data[1];
+                                console.log(data);
+                                var response = JSON.parse(data);
+                                console.log(response);
                             }
 
                 });

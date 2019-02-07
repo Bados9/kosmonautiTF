@@ -20,7 +20,7 @@
         $query = "SELECT * FROM astronauts WHERE astroID = '{$astroID}';";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
         $row = pg_fetch_row($result);
-        echo $row;
+        echo json_encode($row);
     }
 
     /*$query = 'DROP TABLE astronauts;';
