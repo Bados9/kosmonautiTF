@@ -29,6 +29,7 @@
                             type: "POST",
                             success: function(data){
                                 console.log("uspech nebo ne");
+                                console.log(data);
                             }
 
                 });
