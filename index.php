@@ -102,7 +102,8 @@
    </script>
     <?php include 'database.php'; ?>
     <div style="padding-top:50px;" class="border border-black">
-        <p style="font-size:360%;" class="col-sm-8">Evidence kosmonautů</p>
+        <p style="font-size:330%;" class="col-sm-8">Evidence kosmonautů</p>
+        <br>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
     </div>
 
