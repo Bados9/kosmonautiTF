@@ -104,15 +104,15 @@
     <?php include 'database.php'; ?>
     <h1>Evidence kosmonautů</h1>
     
-    <table id='astroTable' class='table table-bordered dataTable'>
+    <table id='astroTable' class='table table-bordered'>
         <thead>
             <tr>
                 <th>Jméno</th>
                 <th>Příjmení</th>
                 <th>Datum narození</th>
-                <th>Superschopnost</th>
-                <th></th>
-                <th></th>
+                <th class="no-border">Superschopnost</th>
+                <th class="th-sm"></th>
+                <th class="th-sm"></th>
             </tr>
         </thead>
         <tbody>
