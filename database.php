@@ -19,9 +19,10 @@
     function getAstronaut($astroID){
         $query = "SELECT * FROM astronauts WHERE astroID = '{$astroID}';";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-        echo $result;
+        $row = pg_fetch_row($result);
+        echo $row;
     }
-    
+
     /*$query = 'DROP TABLE astronauts;';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     $query = 'CREATE TABLE astronauts (astroID SERIAL NOT NULL,
