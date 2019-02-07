@@ -101,13 +101,13 @@
         });
    </script>
     <?php include 'database.php'; ?>
-    <div>
+    <div class="border">
         <h1 class="col-sm-8">Evidence kosmonautů</h1>
-        <button type="button" class="btn btn-default text-centered" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
     </div>
 
-    <div class="col-sm-10 center" >
-        <table id='astroTable' class='table rounded border-5'>
+    <div class="col-sm-10 center border-5 rounded">
+        <table id='astroTable' class='table'>
             <thead>
                 <tr>
                     <th>Jméno</th>
