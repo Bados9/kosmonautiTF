@@ -102,7 +102,7 @@
    </script>
     <?php include 'database.php'; ?>
     <div class="border border-black">
-        <h1 class="col-sm-8">Evidence kosmonautů</h1>
+        <p style="font-size:160%;" class="col-sm-8">This is a paragraph.</p>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
     </div>
 
