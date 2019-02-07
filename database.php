@@ -11,7 +11,7 @@
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
-    function deleteAstronaut($astroID){
+    function removeAstronaut($astroID){
         $query = "DELETE FROM astronauts WHERE astroID = '{$astroID}';";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
@@ -42,6 +42,7 @@
         $function = $_POST['action'];
         switch($function) {
             case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
+            case 'removeAstronaut' : removeAstronaut($_POST['id']);break;
         }
     }
 

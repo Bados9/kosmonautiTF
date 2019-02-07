@@ -9,9 +9,22 @@
  </head>
  <body>
     <script>
+        var removeID;
         $(document).ready(function(){
             $('#astroTable').DataTable();
             $('.dataTables_length').addClass('bs-select');
+            $('#removeAstronaut').on('show.bs.modal', function(e) {
+				removeID = $(e.relatedTarget).data('id');
+			}); 
+            $('#removeByID').click(function() {
+                $.ajax({    url: "database.php",
+                            data: { action: "removeAstronaut",
+                                    id: removeID },
+                            type: "POST",
+                            success: function(){
+                                console.log("astronaut removed");
+                            }
+            });
             $('#newAstronaut').click(function() {    
                 $.ajax({    url: "database.php",
                             data: { action: "newAstronaut",
@@ -60,8 +73,10 @@
             <td> <?= $row[2]; ?></td>
             <td> <?= $row[3]; ?></td>
             <td> <?= $row[4]; ?></td>
-            <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
-            <td> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
+            <td> <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
+            <td> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
+                    <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
         <?}?>
         </tbody>
@@ -99,13 +114,32 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id ="newAstronaut" class="btn btn-default" data-dismiss="modal">Add</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id ="newAstronaut" class="btn btn-default" data-dismiss="modal">Přidat</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
             </div>
             </div>
         </div>
     </div>
 
+    <div id="removeAstronaut" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Potvrzení</h4>
+            </div>
+            <div class="modal-body">
+                Opravdu chcete kosmonauta odstranit z evidence?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="removeByID" class="btn btn-default" data-dismiss="modal">Ano</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ne</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
