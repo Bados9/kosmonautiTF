@@ -11,13 +11,14 @@
     <script>
         var removeID;
         $(document).ready(function(){
-            $('#astroTable').DataTable();
-            $('.dataTables_length').addClass('bs-select');
+            //$('#astroTable').DataTable();
+            //$('.dataTables_length').addClass('bs-select');
             $('#removeAstronaut').on('show.bs.modal', function(e) {
 				removeID = $(e.relatedTarget).data('id');
+                console.log("funguje aspon tohle?");
 			}); 
             $('#removeByID').click(function() {
-                console.log("removeID=" + removeID);
+                console.log("removeID");
                 $.ajax({    url: "database.php",
                             data: { action: "removeAstronaut",
                                     id: removeID },
