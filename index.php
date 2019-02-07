@@ -24,6 +24,7 @@
                                     id: removeID },
                             type: "POST",
                             success: function(){
+                                refreshTable();
                                 console.log("astronaut removed");
                             }
                 });
