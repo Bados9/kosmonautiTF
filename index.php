@@ -17,6 +17,7 @@
 				removeID = $(e.relatedTarget).data('id');
 			}); 
             $('#removeByID').click(function() {
+                console.log("removeID=" + removeID);
                 $.ajax({    url: "database.php",
                             data: { action: "removeAstronaut",
                                     id: removeID },
@@ -24,6 +25,7 @@
                             success: function(){
                                 console.log("astronaut removed");
                             }
+                });
             });
             $('#newAstronaut').click(function() {    
                 $.ajax({    url: "database.php",
