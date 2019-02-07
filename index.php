@@ -112,7 +112,7 @@
                 <th>Příjmení</th>
                 <th>Datum narození</th>
                 <th>Superschopnost</th>
-                <th span="2"></th>
+                <th rowspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -125,9 +125,9 @@
             <td> <?= $row[2]; ?></td>
             <td> <?= $row[3]; ?></td>
             <td> <?= $row[4]; ?></td>
-            <td> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
+            <td class="border border-right-0"> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
                     <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
-            <td> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
+            <td class="border border-left-0"> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
                     <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
         <?}};refreshTable();?>
