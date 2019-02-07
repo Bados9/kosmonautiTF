@@ -106,7 +106,7 @@
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
     </div>
 
-    <div class="col-sm-10 container border-5 border-black border rounded">
+    <div class="col-sm-10 mx-auto">
         <table id='astroTable' class='table'>
             <thead>
                 <tr>
