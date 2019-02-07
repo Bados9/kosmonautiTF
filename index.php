@@ -21,17 +21,13 @@
 
             $('#editAstronaut').on('show.bs.modal', function(e) {
 				editID = $(e.relatedTarget).data('id');
-                console.log("funguje aspon tohle?");
-
                 $.ajax({    url: "database.php",
                             data: { action: "getAstronaut",
                                     id: editID },
                             type: "POST",
                             success: function(data){
-                                console.log("uspech nebo ne");
                                 var response = JSON.parse(data);
-                                console.log(response[1]);
-                                $("#fname1").val("a takhle");
+                                $("#fname1").val(response[1]);
                                 $("#sname1").val(response[2]);
                                 $("#bdate1").val(response[3]);
                                 $("#superpwr1").val(response[4]);
@@ -48,7 +44,6 @@
                             type: "POST",
                             success: function(){
                                 location.reload();
-                                console.log("astronaut removed");
                             }
                 });
             });

@@ -7,7 +7,8 @@
     }
 
     function editAstronaut($astroID, $fname, $sname, $bdate, $superpwr){
-        //$query = 'INSERT INTO astronauts VALUES(DEFAULT, $fname, $sname, $bdate, $superpwr);';
+        $query = "UPDATE astronauts SET firstname='{$fname}', surname='{$sname}', bdate='{$bdate}' superpower='{$superpwr}' \
+                  WHERE astroID = {$astroID}";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
@@ -36,6 +37,8 @@
 
     //newAstronaut("David", "Janeček", '2001-05-05', "nic");
     //newAstronaut("Adam", "Jiruška", '1999-01-02', "nemá");
+    editAstronaut(2, "Adam", "Jiruška", '1999-01-02', "už má");
+
     function getAllAstronauts(){
         $result = pg_query("SELECT * FROM astronauts");
         if (!$result) {
