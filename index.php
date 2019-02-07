@@ -112,7 +112,7 @@
                 <th>Příjmení</th>
                 <th>Datum narození</th>
                 <th>Superschopnost</th>
-                <th rowspan="2"></th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
