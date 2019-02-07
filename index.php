@@ -17,8 +17,22 @@
             
             $('#removeAstronaut').on('show.bs.modal', function(e) {
 				removeID = $(e.relatedTarget).data('id');
-                console.log("funguje aspon tohle?");
 			}); 
+
+            $('#editAstronaut').on('show.bs.modal', function(e) {
+				editID = $(e.relatedTarget).data('id');
+                console.log("funguje aspon tohle?");
+
+                $.ajax({    url: "database.php",
+                            data: { action: "getAstronaut",
+                                    id: editID },
+                            type: "POST",
+                            success: function(data){
+                                console.log("uspech nebo ne");
+                            }
+
+                });
+			});
             
             $('#removeByID').click(function() {
                 console.log("removeID");
@@ -65,7 +79,7 @@
                                     id: editID },
                             type: "POST",
                             success: function(data){
-                                console.log(data);
+                                console.log("uspech nebo ne");
                             }
 
                 });
