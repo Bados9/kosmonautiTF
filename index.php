@@ -2,7 +2,6 @@
  <head>
     <title>Kosmonauti</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
@@ -102,38 +101,41 @@
         });
    </script>
     <?php include 'database.php'; ?>
-    <h1 class="col-sm-8">Evidence kosmonautů</h1>
-    <button type="button" class="btn btn-default " data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
+    <div>
+        <h1 class="col-sm-8">Evidence kosmonautů</h1>
+        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
+    </div>
 
-    <table id='astroTable' class='table table-bordered center col-md-10 rounded border-5'>
-        <thead>
+    <div class="col-sm-10">
+        <table id='astroTable' class='table table-bordered center col-md-10 rounded border-5'>
+            <thead>
+                <tr>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Datum narození</th>
+                    <th>Superschopnost</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            function refreshTable(){
+            $result = getAllAstronauts();
+            while ($row = pg_fetch_row($result)){ ?>
             <tr>
-                <th>Jméno</th>
-                <th>Příjmení</th>
-                <th>Datum narození</th>
-                <th>Superschopnost</th>
-                <th colspan="2"></th>
+                <td> <?= $row[1]; ?></td>
+                <td> <?= $row[2]; ?></td>
+                <td> <?= $row[3]; ?></td>
+                <td> <?= $row[4]; ?></td>
+                <td class="col-sm-1"> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
+                        <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
+                <td class="col-sm-1"> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
+                        <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
             </tr>
-        </thead>
-        <tbody>
-        <?php
-        function refreshTable(){
-        $result = getAllAstronauts();
-        while ($row = pg_fetch_row($result)){ ?>
-        <tr>
-            <td> <?= $row[1]; ?></td>
-            <td> <?= $row[2]; ?></td>
-            <td> <?= $row[3]; ?></td>
-            <td> <?= $row[4]; ?></td>
-            <td class="col-sm-1"> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
-                    <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
-            <td class="col-sm-1"> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
-                    <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
-        </tr>
-        <?}};refreshTable();?>
-        </tbody>
-    </table>
-
+            <?}};refreshTable();?>
+            </tbody>
+        </table>
+    </div>
     <div id="addAstronaut" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
