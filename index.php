@@ -123,10 +123,10 @@
             $result = getAllAstronauts();
             while ($row = pg_fetch_row($result)){ ?>
             <tr>
-                <td> <?= $row[1]; ?></td>
-                <td> <?= $row[2]; ?></td>
-                <td> <?= $row[3]; ?></td>
-                <td> <?= $row[4]; ?></td>
+                <td class="col-sm-2"> <?= $row[1]; ?></td>
+                <td class="col-sm-2"> <?= $row[2]; ?></td>
+                <td class="col-sm-2"> <?= $row[3]; ?></td>
+                <td class="col-sm-2"> <?= $row[4]; ?></td>
                 <td class="col-sm-1"> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
                         <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
                 <td class="col-sm-1"> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
