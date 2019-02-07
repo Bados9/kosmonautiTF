@@ -7,8 +7,7 @@
     }
 
     function editAstronaut($astroID, $fname, $sname, $bdate, $superpwr){
-        $query = "UPDATE astronauts SET firstname='{$fname}', surname='{$sname}', bdate='{$bdate}', superpower='{$superpwr}' \
-                  WHERE astroID = {$astroID}";
+        $query = "UPDATE astronauts SET firstname='{$fname}', surname='{$sname}', bdate='{$bdate}', superpower='{$superpwr}' WHERE astroID = {$astroID}";       
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
