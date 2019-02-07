@@ -105,7 +105,7 @@
     <h1 class="col-sm-8">Evidence kosmonautů</h1>
     <button type="button" class="btn btn-default " data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
 
-    <table id='astroTable' class='table table-bordered center table-nonfluid'>
+    <table id='astroTable' class='table table-bordered center col-md-10 rounded border-5'>
         <thead>
             <tr>
                 <th>Jméno</th>
