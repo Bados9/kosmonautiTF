@@ -30,8 +30,8 @@
                             success: function(data){
                                 console.log("uspech nebo ne");
                                 var response = JSON.parse(data);
-                                console.log(response);
-                                $("#fname").val(response[1]);
+                                console.log(response[1]);
+                                $("#fname").val("a takhle");
                                 $("#sname").val(response[2]);
                                 $("#bdate").val(response[3]);
                                 $("#superpwr").val(response[4]);
