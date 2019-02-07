@@ -102,17 +102,17 @@
         });
    </script>
     <?php include 'database.php'; ?>
-    <h1>Evidence kosmonautů</h1>
-    
-    <table id='astroTable' class='table table-bordered'>
+    <h1 class="col-sm-8">Evidence kosmonautů</h1>
+    <button type="button" class="btn btn-default " data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
+
+    <table id='astroTable' class='table table-bordered center'>
         <thead>
             <tr>
                 <th>Jméno</th>
                 <th>Příjmení</th>
                 <th>Datum narození</th>
-                <th class="no-border">Superschopnost</th>
-                <th class="th-sm"></th>
-                <th class="th-sm"></th>
+                <th>Superschopnost</th>
+                <th span="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -133,8 +133,6 @@
         <?}};refreshTable();?>
         </tbody>
     </table>
-
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addAstronaut"> Přidat astronauta </button>
 
     <div id="addAstronaut" class="modal fade" role="dialog">
         <div class="modal-dialog">
