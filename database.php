@@ -52,7 +52,7 @@
             case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
             case 'removeAstronaut' : removeAstronaut($_POST['id']);break;
             case 'getAstronaut' : getAstronaut($_POST['id']);break;
-            case 'editAstronaug' : editAstronaut($_POST['id'], $_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
+            case 'editAstronaut' : editAstronaut($_POST['id'], $_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
         }
     }
 
