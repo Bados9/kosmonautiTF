@@ -48,6 +48,8 @@
             });
 
             $('#editByID').click(function() {
+                console.log('úprava astronauta');
+                console.log(editID);
                 $.ajax({    url: "database.php",
                             data: { action: "editAstronaut",
                                     id: editID,
