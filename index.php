@@ -13,10 +13,12 @@
         $(document).ready(function(){
             //$('#astroTable').DataTable();
             //$('.dataTables_length').addClass('bs-select');
+            
             $('#removeAstronaut').on('show.bs.modal', function(e) {
 				removeID = $(e.relatedTarget).data('id');
                 console.log("funguje aspon tohle?");
 			}); 
+            
             $('#removeByID').click(function() {
                 console.log("removeID");
                 $.ajax({    url: "database.php",
@@ -24,11 +26,12 @@
                                     id: removeID },
                             type: "POST",
                             success: function(){
-                                refreshTable();
+                                location.reload();
                                 console.log("astronaut removed");
                             }
                 });
             });
+            
             $('#newAstronaut').click(function() {    
                 $.ajax({    url: "database.php",
                             data: { action: "newAstronaut",
@@ -50,6 +53,19 @@
 
                                 console.log("astronaut added");
                             }
+                });
+            });
+
+            $('#edit').click(function() {
+                console.log("click na edit");
+                $.ajax({    url: "database.php",
+                            data: { action: "getAstronaut",
+                                    id: editID },
+                            type: "POST",
+                            success: function(data){
+                                console.log(data);
+                            }
+
                 });
             });
         });
@@ -78,7 +94,7 @@
             <td> <?= $row[2]; ?></td>
             <td> <?= $row[3]; ?></td>
             <td> <?= $row[4]; ?></td>
-            <td> <button type="button" class="btn btn-default">
+            <td> <button type="button" id="edit" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#editAstronaut">
                     <span class="glyphicon glyphicon-pencil text-warning"></span> Upravit</button> </td>
             <td> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
                     <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
@@ -137,6 +153,43 @@
             </div>
             <div class="modal-body">
                 Opravdu chcete kosmonauta odstranit z evidence?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="removeByID" class="btn btn-default" data-dismiss="modal">Ano</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ne</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="editAstronaut" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Potvrzení</h4>
+            </div>
+            <div class="modal-body">
+            <form>
+                    <div class="form-group">
+                        <label for="fname">Jméno:</label>
+                        <input type="text" class="form-control" id="fname" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="sname">Příjmení:</label>
+                        <input type="text" class="form-control" id="sname">
+                    </div>
+                    <div class="form-group">
+                        <label for="bdate">Datum narození:</label>
+                        <input type="date" class="form-control" id="bdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="superpwr">Superschopnost:</label>
+                        <input type="text" class="form-control" id="superpwr">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" id="removeByID" class="btn btn-default" data-dismiss="modal">Ano</button>

@@ -16,6 +16,12 @@
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     }
 
+    function getAstronaut($astroID){
+        $query = "SELECT * FROM astronauts WHERE astroID = '{$astroID}';";
+        $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+        echo $result;
+    }
+    
     /*$query = 'DROP TABLE astronauts;';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
     $query = 'CREATE TABLE astronauts (astroID SERIAL NOT NULL,
@@ -43,6 +49,7 @@
         switch($function) {
             case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
             case 'removeAstronaut' : removeAstronaut($_POST['id']);break;
+            case 'getAstronaut' : getAstronaut($_POST['id']);break;
         }
     }
 
