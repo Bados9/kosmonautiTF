@@ -36,7 +36,6 @@
 
     //newAstronaut("David", "Janeček", '2001-05-05', "nic");
     //newAstronaut("Adam", "Jiruška", '1999-01-02', "nemá");
-    editAstronaut(2, "Adam", "Jiruška", '1999-01-02', "už má");
 
     function getAllAstronauts(){
         $result = pg_query("SELECT * FROM astronauts");
@@ -53,6 +52,7 @@
             case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
             case 'removeAstronaut' : removeAstronaut($_POST['id']);break;
             case 'getAstronaut' : getAstronaut($_POST['id']);break;
+            case 'editAstronaug' : editAstronaut($_POST['id'], $_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
         }
     }
 

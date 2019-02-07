@@ -37,10 +37,24 @@
 			});
             
             $('#removeByID').click(function() {
-                console.log("removeID");
                 $.ajax({    url: "database.php",
                             data: { action: "removeAstronaut",
                                     id: removeID },
+                            type: "POST",
+                            success: function(){
+                                location.reload();
+                            }
+                });
+            });
+
+            $('#editByID').click(function() {
+                $.ajax({    url: "database.php",
+                            data: { action: "editAstronaut",
+                                    id: editID,
+                                    fname: $('#fname1').val(),
+                                    sname: $('#sname1').val(),
+                                    bdate:  $('#bdate1').val(),
+                                    superpwr:  $('#superpwr1').val()},
                             type: "POST",
                             success: function(){
                                 location.reload();
@@ -209,8 +223,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="removeByID" class="btn btn-default" data-dismiss="modal">Ano</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Ne</button>
+                <button type="button" id="editByID" class="btn btn-default" data-dismiss="modal">Upravit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zrušit</button>
             </div>
             </div>
         </div>
