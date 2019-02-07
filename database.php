@@ -49,10 +49,10 @@
     if(isset($_POST['action']) && !empty($_POST['action'])) {
         $function = $_POST['action'];
         switch($function) {
-            case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
-            case 'removeAstronaut' : removeAstronaut($_POST['id']);break;
-            case 'getAstronaut' : getAstronaut($_POST['id']);break;
-            case 'editAstronaut' : editAstronaut($_POST['id'], $_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']);break;
+            case 'newAstronaut' : newAstronaut($_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']); break;
+            case 'removeAstronaut' : removeAstronaut($_POST['id']); break;
+            case 'getAstronaut' : getAstronaut($_POST['id']); break;
+            case 'editAstronaut' : editAstronaut($_POST['id'], $_POST['fname'], $_POST['sname'], $_POST['bdate'], $_POST['superpwr']); break;
         }
     }
 

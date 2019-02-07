@@ -133,7 +133,8 @@
                 <td class="col-sm-1"> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
                         <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
             </tr>
-            <?}};refreshTable();?>
+            <?}};
+            refreshTable();?>
             </tbody>
         </table>
     </div>
