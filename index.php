@@ -68,7 +68,8 @@
             </tr>
         </thead>
         <tbody>
-        <?
+        <?php
+        function refreshTable(){
         $result = getAllAstronauts();
         while ($row = pg_fetch_row($result)){ ?>
         <tr>
@@ -81,7 +82,7 @@
             <td> <button type="button" id="remove" class="btn btn-default" data-id="<?= $row[0]; ?>" data-toggle="modal" data-target="#removeAstronaut">
                     <span class="glyphicon glyphicon-remove text-danger"></span> Odstranit</button> </td>
         </tr>
-        <?}?>
+        <?}};refreshTable();?>
         </tbody>
     </table>
 
